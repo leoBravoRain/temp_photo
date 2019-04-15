@@ -17,9 +17,11 @@ class Photo(models.Model):
 
     delta_time = models.IntegerField()
 
+    name  = models.CharField(max_length=300)
+
     # # Metodo para obtener nombre de objeto
-    # def __unicode__(self):
-    #   return self.id
+    def __unicode__(self):
+      return self.name
 
 @receiver(pre_delete, sender=Photo)
 def mymodel_delete(sender, instance, **kwargs):
