@@ -29,7 +29,7 @@ def remove_expired_elements():
 
         user_delta_time = (photo.delta_time)
 
-        user_delta_time = timedelta(seconds = 60*user_delta_time)
+        user_delta_time = timedelta(seconds = 24*60*60*user_delta_time)
 
         print("User: ")
 
