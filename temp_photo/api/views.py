@@ -52,7 +52,7 @@ def remove_expired_elements():
 
             print("Remove file " + str(photo.id))
 
-            # photo.delete()
+            photo.delete()
 
         else:
 
