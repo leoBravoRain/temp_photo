@@ -17,29 +17,42 @@ def remove_expired_elements():
 
     for photo in photos:
 
+        # print(timedelta(days = 1))
+
+        # print((current_date - photo.date) > timedelta(days = 1))
+
         print('Analizing file ' + str(photo.id) + '\n')
 
-        delta_time_file = ((current_date - photo.date).seconds)
+        delta_time_file = (current_date - photo.date)
 
-        delta_time_file = timedelta(seconds = delta_time_file)
+        # delta_time_file = timedelta(seconds = delta_time_file)
 
         print("delta time: ")
 
         print((delta_time_file))
 
-        user_delta_time = (photo.delta_time)
+        # user_delta_time = (photo.delta_time)
+        user_delta_time = timedelta(days = photo.delta_time)
 
-        user_delta_time = timedelta(seconds = 24*60*60*user_delta_time)
+        # print(user_delta_time)
+
+        # user_delta_time = timedelta(seconds = 24*3600*user_delta_time)
+
+        # print(user_delta_time)
 
         print("User: ")
 
-        print((user_delta_time))
+        print(user_delta_time)
+
+        # print(photo.name)
+
+        # print(timedelta(seconds = 1*3600*24))
 
         if delta_time_file > user_delta_time:
 
             print("Remove file " + str(photo.id))
 
-            photo.delete()
+            # photo.delete()
 
         else:
 
